@@ -32,9 +32,12 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="file_test.cpp" />
 		<Unit filename="lib.cpp" />
 		<Unit filename="lib.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="map.cpp" />
+		<Unit filename="map.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
