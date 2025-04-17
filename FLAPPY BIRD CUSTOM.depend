@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1584205420 source:c:\new project\flappy bird custom\main.cpp
+	<iostream>
+
+1744861964 source:c:\new project\flappy bird custom\lib.cpp
+	"lib.h"
+	<iostream>
+
+1744861964 c:\new project\flappy bird custom\lib.h
+	<SDL.h>
+	<SDL_image.h>
+	<SDL_ttf.h>
+	<string>
+	<vector>
+	<stdio.h>
+
