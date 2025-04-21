@@ -3,7 +3,7 @@
 #include<stdlib.h>
 #include<iostream>
 using namespace std;
-//hàm tải hình ảnh mặt đất bản đồ
+//hàm tải hình ảnh mặt đất
 bool land::init()
 {
     posLand.getPos(0, SCREEN_HEIGHT - LAND_HEIGHT);
@@ -34,7 +34,7 @@ void land::render()
 }
 void land::update()
 {
-    posLand.x -= 3;
+    posLand.x -= 2;
 }
 //hàm giải phóng tài nguyên
 void land::Free()
