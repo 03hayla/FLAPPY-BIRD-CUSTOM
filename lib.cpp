@@ -1,8 +1,9 @@
-#include  "lib.h"
-#include<iostream>
+#include "lib.h"
+#include <iostream>
 using namespace std;
+
 bool LTexture::quit = false;
-bool LTexture::die = true;
+bool LTexture::die = false; // Sửa từ true thành false
 short int LTexture::score = 0;
 SDL_Window* LTexture::gWindow = NULL;
 SDL_Renderer* LTexture::gRenderer = NULL;

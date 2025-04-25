@@ -47,7 +47,7 @@ public:
     static bool die;
     static short int score;
 
-    static const short int SCREEN_WIDTH = 350;
+    static const short int SCREEN_WIDTH = 600;
     static const short int SCREEN_HEIGHT = 625;
     static const short int PIPE_SPACE = 160;
     static const short int TOTAL_PIPE = 4;

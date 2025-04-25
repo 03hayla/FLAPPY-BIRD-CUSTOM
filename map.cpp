@@ -34,7 +34,7 @@ void land::render()
 }
 void land::update()
 {
-    posLand.x -= 2;
+    posLand.x -= 3;
 }
 //hàm giải phóng tài nguyên
 void land::Free()

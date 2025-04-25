@@ -1,11 +1,11 @@
 # depslib dependency file v1.0
 1744863320 source:c:\new project\flappy bird custom\main.cpp
 
-1744861964 source:c:\new project\flappy bird custom\lib.cpp
+1745597551 source:c:\new project\flappy bird custom\lib.cpp
 	"lib.h"
 	<iostream>
 
-1744861964 c:\new project\flappy bird custom\lib.h
+1745590207 c:\new project\flappy bird custom\lib.h
 	<SDL.h>
 	<SDL_image.h>
 	<SDL_ttf.h>
@@ -13,9 +13,14 @@
 	<vector>
 	<stdio.h>
 
-1744904093 source:c:\new project\flappy bird custom\file_test.cpp
+1745595814 source:c:\new project\flappy bird custom\file_test.cpp
+	"character.h"
+	"chuong_ngai_vat.h"
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
 
-1744906404 source:c:\new project\flappy bird custom\map.cpp
+1745591639 source:c:\new project\flappy bird custom\map.cpp
 	"map.h"
 	<stdio.h>
 	<stdlib.h>
@@ -25,9 +30,28 @@
 	"lib.h"
 	<vector>
 
-1744905379 source:c:\new project\flappy bird custom\test_file_02.cpp
-	"map.h"
+1745219729 source:c:\new project\flappy bird custom\test_file_02.cpp
+	"chuong_ngai_vat.h"
 	<iostream>
 	<SDL.h>
 	<SDL_image.h>
+
+1745368483 source:c:\new project\flappy bird custom\chuong_ngai_vat.cpp
+	"chuong_ngai_vat.h"
+	<cstdlib>
+	<ctime>
+
+1745597576 c:\new project\flappy bird custom\chuong_ngai_vat.h
+	"lib.h"
+	<vector>
+
+1745595765 c:\new project\flappy bird custom\character.h
+	"lib.h"
+	"chuong_ngai_vat.h"
+	<string>
+
+1745594679 source:c:\new project\flappy bird custom\character.cpp
+	"character.h"
+	<stdio.h>
+	<iostream>
 
