@@ -32,13 +32,19 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="file_test.cpp" />
+		<Unit filename="character.cpp" />
+		<Unit filename="character.h" />
+		<Unit filename="chuong_ngai_vat.cpp" />
+		<Unit filename="chuong_ngai_vat.h" />
+		<Unit filename="game.cpp" />
+		<Unit filename="game.h" />
 		<Unit filename="lib.cpp" />
 		<Unit filename="lib.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="map.cpp" />
 		<Unit filename="map.h" />
-		<Unit filename="test_file_02.cpp" />
+		<Unit filename="music.cpp" />
+		<Unit filename="music.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

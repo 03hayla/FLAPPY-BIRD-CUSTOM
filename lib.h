@@ -1,5 +1,4 @@
-#ifndef LIB_H
-#define LIB_H
+#pragma once
 
 #include <SDL.h>
 #include <SDL_image.h>
@@ -47,20 +46,13 @@ public:
     static bool die;
     static short int score;
 
-    static const short int SCREEN_WIDTH = 600;
-    static const short int SCREEN_HEIGHT = 625;
+    static const short int SCREEN_WIDTH = 800;
+    static const short int SCREEN_HEIGHT = 600;
     static const short int PIPE_SPACE = 160;
     static const short int TOTAL_PIPE = 4;
     static const short int PIPE_DISTANCE = 220;
-    static const short int LAND_HEIGHT = 140;
+    static const short int LAND_HEIGHT = 112;
     static const short int SHIBA_WIDTH = 50;
     static const short int SHIBA_HEIGHT = 35;
 };
 
-
-
-
-
-
-
-#endif // LIB_H

@@ -1,13 +1,13 @@
-#include "lib.h"
+#include "game.h"
 #include <iostream>
-using namespace std;
 
 bool LTexture::quit = false;
-bool LTexture::die = false; // Sửa từ true thành false
+bool LTexture::die = true;
 short int LTexture::score = 0;
 SDL_Window* LTexture::gWindow = NULL;
 SDL_Renderer* LTexture::gRenderer = NULL;
 SDL_Event LTexture::event;
+
 LTexture::LTexture()
 {
 	Texture = NULL;
@@ -46,29 +46,39 @@ void LTexture::Render(short int x, short int y, short int angle, SDL_Rect* clip,
 
     SDL_RenderCopyEx( gRenderer, Texture, clip, &Rec_Render, angle, NULL, flip );
 }
+
 bool LTexture::Load(string path, double scale)
 {
-    free();
-    SDL_Surface* loadedSurface = IMG_Load(path.c_str());
-    if (loadedSurface == NULL)
-    {
-        cout << "Unable to load image " << path << "! SDL_image Error: " << IMG_GetError() << endl;
-        return false;
-    }
-    SDL_SetColorKey(loadedSurface, SDL_TRUE, SDL_MapRGB(loadedSurface->format, 0x00, 0xFF, 0xFF));
-    Texture = SDL_CreateTextureFromSurface(gRenderer, loadedSurface);
-    if (Texture == NULL)
-    {
-        cout << "Unable to create texture from " << path << "! SDL Error: " << SDL_GetError() << endl;
-        SDL_FreeSurface(loadedSurface);
-        return false;
-    }
-    tWidth = static_cast<short int>(loadedSurface->w * scale);
-    tHeight = static_cast<short int>(loadedSurface->h * scale);
-    SDL_FreeSurface(loadedSurface);
-    SDL_SetRenderDrawColor(gRenderer, 0xFF, 0xFF, 0xFF, 0xFF);
-    return true;
+	free();
+
+	SDL_Surface* loadedSurface = IMG_Load( path.c_str() );
+	if( loadedSurface == NULL )
+	{
+		printf( "Unable to load image %s! SDL_image Error: %s\n", path.c_str(), IMG_GetError() );
+	}
+	else
+	{
+		SDL_SetColorKey( loadedSurface, SDL_TRUE, SDL_MapRGB( loadedSurface->format, 0x00, 0xFF, 0xFF ) );
+
+        Texture = SDL_CreateTextureFromSurface( gRenderer, loadedSurface );
+		if( Texture == NULL )
+		{
+			printf( "Unable to create texture from %s! SDL Error: %s\n", path.c_str(), SDL_GetError() );
+		}
+		else
+		{
+			tWidth = (loadedSurface->w) * scale;
+			tHeight = (loadedSurface->h) * scale;
+		}
+
+		SDL_FreeSurface( loadedSurface );
+	}
+	SDL_SetRenderDrawColor(gRenderer, 0xFF, 0xFF, 0xFF, 0xFF);
+
+	return Texture != NULL;
+
 }
+
 bool LTexture::isNULL()
 {
     if (Texture == NULL) return true;
@@ -80,6 +90,3 @@ void position::getPos(const short int x, const short int y)
     this->x = x;
     this->y = y;
 }
-
-
-

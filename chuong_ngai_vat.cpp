@@ -1,27 +1,22 @@
 #include "chuong_ngai_vat.h"
-#include <cstdlib>
-#include <ctime>
+#include "stdio.h"
+
+vector<position> posPipe;
 
 bool pipe::init()
 {
-    srand(time(0));
-    std::string pipe_path = "pipe.png";
+    posPipe.clear();
+    for (signed char i = 0; i < TOTAL_PIPE; i++)
+    {
+        position temp;
+        temp.getPos(SCREEN_WIDTH + i * PIPE_DISTANCE + 350, (rand() % (randMax - randMin + 1)) + randMin);
+        posPipe.push_back(temp);
+    }
     if (isNULL())
     {
-        if (Load(pipe_path.c_str(), 1))
+        if (Load( "anh_amthanh/pipe.png", 1 ))
         {
-
-            PipePair p;
-            p.posPipe.getPos(SCREEN_WIDTH, 0);
-            p.gapY = randMin + (rand() % (randMax - randMin + 1));
-            p.passed = false;
-            pipes.push_back(p);
             return true;
-        }
-        else
-        {
-            std::cout << "Failed to load pipe.png! SDL_image Error: " << IMG_GetError() << std::endl;
-            return false;
         }
     }
     return false;
@@ -30,41 +25,35 @@ bool pipe::init()
 void pipe::Free()
 {
     free();
-    pipes.clear();
 }
 
 void pipe::render()
 {
-    for (auto& p : pipes)
+    for (signed char i = 0; i < TOTAL_PIPE; i++)
     {
-
-        Render(p.posPipe.x, p.gapY + PIPE_DISTANCE, 0, NULL, SDL_FLIP_VERTICAL);
-
-        Render(p.posPipe.x, p.gapY - getHeight(), 0, NULL);
+        if (posPipe[i].x <= SCREEN_WIDTH && posPipe[i].x > -getWidth())
+        {
+            Render(posPipe[i].x, posPipe[i].y);
+        }
+        Render(posPipe[i].x, posPipe[i].y + getHeight() + PIPE_SPACE, 180);
     }
 }
 
 void pipe::update()
 {
-
-    for (auto& p : pipes)
+    if (!die)
     {
-        p.posPipe.x -= 3;
-    }
-
-
-    if (!pipes.empty() && pipes[0].posPipe.x < -getWidth())
-    {
-        pipes.erase(pipes.begin());
-    }
-
-
-    if (pipes.empty() || pipes.back().posPipe.x < SCREEN_WIDTH - PIPE_SPACING)
-    {
-        PipePair p;
-        p.posPipe.getPos(SCREEN_WIDTH, 0);
-        p.gapY = randMin + (rand() % (randMax - randMin + 1));
-        p.passed = false;
-        pipes.push_back(p);
+        for (signed char i = 0; i < TOTAL_PIPE; i++)
+        {
+            if (posPipe[i].x < - getWidth())
+            {
+                posPipe[i].y = (rand() % (randMax - randMin + 1)) + randMin;
+                posPipe[i].x = posPipe[(i + TOTAL_PIPE - 1) % TOTAL_PIPE].x + PIPE_DISTANCE;
+            }
+            else
+            {
+                posPipe[i].x -= 3;
+            }
+        }
     }
 }

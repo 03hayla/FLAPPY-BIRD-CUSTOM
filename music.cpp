@@ -1,13 +1,13 @@
-#include "sound.h"
+#include "music.h"
 #include <stdio.h>
 #include <iostream>
 #include <string>
 
 bool sound::init()
 {
-    string breath_path = "res/sound/sfx_breath.wav";
-    string hit_path = "res/sound/sfx_bonk.wav";
-    string sound_path = "res/image/sound.png";
+    string breath_path = "anh_amthanh/sfx_breath.wav";
+    string hit_path = "anh_amthanh/game-over-2-sound-effect-230463.wav";
+    string sound_path = "anh_amthanh/sound.png";
 
     bool success = true;
 

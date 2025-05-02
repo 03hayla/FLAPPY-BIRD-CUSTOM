@@ -1,28 +1,33 @@
+
 #pragma once
 
 #include "lib.h"
 #include "chuong_ngai_vat.h"
 #include <string>
 
-class doge : public LTexture
+
+using namespace std;
+
+class doge:LTexture
 {
 public:
     bool init(bool isDark);
+
     void render();
+
     void Free();
+
     void resetTime()
     {
         time = 0;
     }
-    void jump();
+
     void fall();
-    void update(pipe& p);
 
-    short int getPosY() const { return posDoge.y; } // Đảm bảo có getter
-
+    void update(short int pileWidth, short int pileHeight);
 private:
     short int angle, time, x0;
-    size_t ahead = 0;
-    std::string saved_path = "";
+    short int ahead = 0;
+    string saved_path = "";
     position posDoge;
 };

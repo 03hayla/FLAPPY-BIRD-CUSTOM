@@ -1,5 +1,5 @@
-#ifndef MAP_H
-#define MAP_H
+#pragma once
+
 #include "lib.h"
 #include <vector>
 
@@ -19,5 +19,3 @@ public:
 private:
     position posLand;
 };
-
-#endif // MAP_H

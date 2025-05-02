@@ -1,11 +1,18 @@
 # depslib dependency file v1.0
-1744863320 source:c:\new project\flappy bird custom\main.cpp
+1745656631 source:c:\new project\flappy bird custom\main.cpp
+	"game.h"
+	"lib.h"
+	<time.h>
+	<stdlib.h>
+	<SDL.h>
+	<SDL_image.h>
+	<SDL_ttf.h>
 
-1745597551 source:c:\new project\flappy bird custom\lib.cpp
+1745648380 source:c:\new project\flappy bird custom\lib.cpp
 	"lib.h"
 	<iostream>
 
-1745590207 c:\new project\flappy bird custom\lib.h
+1745648177 c:\new project\flappy bird custom\lib.h
 	<SDL.h>
 	<SDL_image.h>
 	<SDL_ttf.h>
@@ -30,16 +37,16 @@
 	"lib.h"
 	<vector>
 
-1745219729 source:c:\new project\flappy bird custom\test_file_02.cpp
+1745647814 source:c:\new project\flappy bird custom\test_file_02.cpp
 	"chuong_ngai_vat.h"
+	<cassert>
 	<iostream>
-	<SDL.h>
-	<SDL_image.h>
 
-1745368483 source:c:\new project\flappy bird custom\chuong_ngai_vat.cpp
+1745648298 source:c:\new project\flappy bird custom\chuong_ngai_vat.cpp
 	"chuong_ngai_vat.h"
 	<cstdlib>
 	<ctime>
+	<iostream>
 
 1745597576 c:\new project\flappy bird custom\chuong_ngai_vat.h
 	"lib.h"
@@ -50,8 +57,33 @@
 	"chuong_ngai_vat.h"
 	<string>
 
-1745594679 source:c:\new project\flappy bird custom\character.cpp
+1745597551 source:c:\new project\flappy bird custom\character.cpp
 	"character.h"
 	<stdio.h>
 	<iostream>
+
+1745655347 source:c:\new project\flappy bird custom\game.cpp
+	"game.h"
+	"lib.h"
+	<iostream>
+
+1745597709 c:\new project\flappy bird custom\game.h
+	"character.h"
+	"chuong_ngai_vat.h"
+	"map.h"
+	"music.h"
+	<string>
+	<fstream>
+	<sstream>
+
+1745597701 c:\new project\flappy bird custom\music.h
+	<SDL_mixer.h>
+	<string>
+	"lib.h"
+
+1745648971 source:c:\new project\flappy bird custom\music.cpp
+	"music.h"
+	<stdio.h>
+	<iostream>
+	<string>
 

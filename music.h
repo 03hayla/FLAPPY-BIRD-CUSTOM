@@ -1,4 +1,3 @@
-
 #pragma once
 
 #include <SDL_mixer.h>
@@ -32,3 +31,4 @@ private:
     SDL_Rect Mute ;
     SDL_Rect Active ;
 };
+
