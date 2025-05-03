@@ -179,7 +179,7 @@ void game::renderScoreSmall()
 		{
 			image.Load("anh_amthanh/number.png", scaleNumberS);
 		}
-		image.Render(260 - image.getWidth() * (len - i - 1) * 0.75 - 5 * (len - i - 1), 268);
+		 image.Render(SCREEN_WIDTH/2 + 70 - image.getWidth() * (len - i - 1) * 0.75 - 5 * (len - i - 1), 268);
 	}
 	image.free();
 }
@@ -233,7 +233,7 @@ void game::renderScoreLarge()
 		{
 			image.Load("anh_amthanh/0.png", 1);
 		}
-		image.Render((SCREEN_WIDTH - (image.getWidth() * len + (len - 1) * 10)) / 2 + (i + 30) * i, 100);
+		image.Render((SCREEN_WIDTH - (image.getWidth() * len + (len - 1) * 10)) / 2 + i * (image.getWidth() + 5), 100);
 	}
 	image.free();
 }
@@ -295,7 +295,7 @@ void game::renderBestScore()
 		{
 			image.Load("anh_amthanh/number.png", scaleNumberS);
 		}
-		image.Render(260 - image.getWidth()*(len-i-1)*0.75 - 5*(len - i - 1), 315);
+		 image.Render(SCREEN_WIDTH/2 + 70 - image.getWidth()*(len-i-1)*0.75 - 5*(len - i - 1), 315);
 	}
 	image.free();
 
@@ -308,7 +308,7 @@ void game::renderMessage()
 {
 	LTexture image;
 	image.Load("anh_amthanh/message.png", 1);
-	image.Render((SCREEN_WIDTH - image.getWidth()) / 2, 180);
+	 image.Render((SCREEN_WIDTH - image.getWidth()) / 2, 180);
 	image.free();
 }
 
@@ -361,7 +361,7 @@ void game::renderPauseTab()
 {
 	LTexture image;
 	image.Load("anh_amthanh/pauseTab.png", 1);
-	image.Render((SCREEN_WIDTH - image.getWidth()) / 2, 230);
+	 image.Render((SCREEN_WIDTH - image.getWidth()) / 2, 230);
 	image.free();
 }
 
@@ -406,7 +406,7 @@ void game::renderGameOver()
 {
 	LTexture image;
 	image.Load("anh_amthanh/gameOver.png", 1);
-	image.Render((SCREEN_WIDTH - image.getWidth()) / 2, 150);
+	 image.Render((SCREEN_WIDTH - image.getWidth()) / 2, 150);
 	image.free();
 }
 
@@ -426,7 +426,7 @@ void game::renderMedal()
 	{
 		image.Load("anh_amthanh/honor.png", scaleNumberS);
 	}
-	image.Render(82, 275);
+	image.Render(SCREEN_WIDTH/2 - 100, 275);
 
 	image.free();
 }
@@ -435,7 +435,7 @@ void game::replay()
 {
 	LTexture image;
 	image.Load("anh_amthanh/replay.png", 1);
-	image.Render((SCREEN_WIDTH - image.getWidth()) / 2, 380);
+	 image.Render((SCREEN_WIDTH - image.getWidth()) / 2, 380);
 	image.free();
 }
 

@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1745656631 source:c:\new project\flappy bird custom\main.cpp
+1746205513 source:c:\new project\flappy bird custom\main.cpp
 	"game.h"
 	"lib.h"
 	<time.h>
@@ -8,11 +8,11 @@
 	<SDL_image.h>
 	<SDL_ttf.h>
 
-1745648380 source:c:\new project\flappy bird custom\lib.cpp
-	"lib.h"
+1746205513 source:c:\new project\flappy bird custom\lib.cpp
+	"game.h"
 	<iostream>
 
-1745648177 c:\new project\flappy bird custom\lib.h
+1746239254 c:\new project\flappy bird custom\lib.h
 	<SDL.h>
 	<SDL_image.h>
 	<SDL_ttf.h>
@@ -27,13 +27,13 @@
 	<SDL.h>
 	<SDL_image.h>
 
-1745591639 source:c:\new project\flappy bird custom\map.cpp
+1746240262 source:c:\new project\flappy bird custom\map.cpp
 	"map.h"
 	<stdio.h>
-	<stdlib.h>
 	<iostream>
+	<stdlib.h>
 
-1744902987 c:\new project\flappy bird custom\map.h
+1746205513 c:\new project\flappy bird custom\map.h
 	"lib.h"
 	<vector>
 
@@ -42,32 +42,33 @@
 	<cassert>
 	<iostream>
 
-1745648298 source:c:\new project\flappy bird custom\chuong_ngai_vat.cpp
+1746207318 source:c:\new project\flappy bird custom\chuong_ngai_vat.cpp
 	"chuong_ngai_vat.h"
-	<cstdlib>
-	<ctime>
-	<iostream>
+	"stdio.h"
 
-1745597576 c:\new project\flappy bird custom\chuong_ngai_vat.h
+1746240967 c:\new project\flappy bird custom\chuong_ngai_vat.h
 	"lib.h"
+	<iostream>
 	<vector>
+	<ctime>
+	<cstdlib>
 
-1745595765 c:\new project\flappy bird custom\character.h
+1746205513 c:\new project\flappy bird custom\character.h
 	"lib.h"
 	"chuong_ngai_vat.h"
 	<string>
 
-1745597551 source:c:\new project\flappy bird custom\character.cpp
+1746207318 source:c:\new project\flappy bird custom\character.cpp
 	"character.h"
 	<stdio.h>
 	<iostream>
 
-1745655347 source:c:\new project\flappy bird custom\game.cpp
+1746207318 source:c:\new project\flappy bird custom\game.cpp
 	"game.h"
 	"lib.h"
 	<iostream>
 
-1745597709 c:\new project\flappy bird custom\game.h
+1746205513 c:\new project\flappy bird custom\game.h
 	"character.h"
 	"chuong_ngai_vat.h"
 	"map.h"
@@ -76,14 +77,18 @@
 	<fstream>
 	<sstream>
 
-1745597701 c:\new project\flappy bird custom\music.h
+1746205513 c:\new project\flappy bird custom\music.h
 	<SDL_mixer.h>
 	<string>
 	"lib.h"
 
-1745648971 source:c:\new project\flappy bird custom\music.cpp
+1746205513 source:c:\new project\flappy bird custom\music.cpp
 	"music.h"
 	<stdio.h>
 	<iostream>
 	<string>
+
+1746205513 source:c:\new project\flappy bird custom\winmain.cpp
+	<SDL.h>
+	<windows.h>
 

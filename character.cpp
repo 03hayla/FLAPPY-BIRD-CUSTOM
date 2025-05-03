@@ -2,15 +2,13 @@
 #include <stdio.h>
 #include <iostream>
 
-
-
 bool doge::init(bool isDark)
 {
     string shiba_path = "anh_amthanh/shiba.png";
     if (isDark) shiba_path = "anh_amthanh/shiba-dark.png";
     if (saved_path == shiba_path)
     {
-        posDoge.getPos(75, SCREEN_HEIGHT / 2 - 10);
+        posDoge.getPos(150, SCREEN_HEIGHT / 2 - 10);
         ahead = 0;
         angle = 0;
     }
@@ -83,12 +81,13 @@ void doge::update(short int pipeWidth, short int pipeHeight)
             time++;
         }
 
-        if ( (posDoge.x + getWidth() > posPipe[ahead].x + 5) && (posDoge.x + 5 < posPipe[ahead].x + pipeWidth) &&
-             (posDoge.y + 5 < posPipe[ahead].y + pipeHeight || posDoge.y  + getHeight() > posPipe[ahead].y + pipeHeight + PIPE_SPACE + 5) )
+        // Sử dụng pipeInfos thay vì posPipe
+        if ( (posDoge.x + getWidth() > pipeInfos[ahead].pos.x + 5) && (posDoge.x + 5 < pipeInfos[ahead].pos.x + pipeWidth) &&
+             (posDoge.y + 5 < pipeInfos[ahead].pos.y + pipeHeight || posDoge.y  + getHeight() > pipeInfos[ahead].pos.y + pipeHeight + PIPE_SPACE + 5) )
         {
             die = true;
         }
-        else if (posDoge.x > posPipe[ahead].x + pipeWidth )
+        else if (posDoge.x > pipeInfos[ahead].pos.x + pipeWidth )
         {
             ahead = ( ahead + 1 ) % TOTAL_PIPE;
             score++;

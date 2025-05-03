@@ -50,8 +50,8 @@ public:
     static const short int SCREEN_HEIGHT = 600;
     static const short int PIPE_SPACE = 160;
     static const short int TOTAL_PIPE = 4;
-    static const short int PIPE_DISTANCE = 220;
-    static const short int LAND_HEIGHT = 112;
+    static const short int PIPE_DISTANCE = 300;
+    static const short int LAND_HEIGHT = 60;
     static const short int SHIBA_WIDTH = 50;
     static const short int SHIBA_HEIGHT = 35;
 };

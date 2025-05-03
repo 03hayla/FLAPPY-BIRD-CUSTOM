@@ -1,5 +1,4 @@
 #include "map.h"
-#include "map.h"
 #include <stdio.h>
 #include <iostream>
 #include <stdlib.h>
@@ -29,19 +28,16 @@ void land::Free()
 
 void land::render()
 {
-    if (posLand.x > 0)
-    {
-        Render(posLand.x, posLand.y);
-    }
-    else if (posLand.x > -SCREEN_WIDTH && posLand.x <= 0)
-    {
-        Render(posLand.x, posLand.y);
-        Render(posLand.x + SCREEN_WIDTH, posLand.y, 0, NULL);
-    }
-    else
-    {
-        posLand.getPos(0, SCREEN_HEIGHT - LAND_HEIGHT);
-        Render(posLand.x, posLand.y);
+
+    int landWidth = getWidth();
+    int numTiles = (SCREEN_WIDTH / landWidth) + 2;
+
+
+    int offset = posLand.x % landWidth;
+    if (offset > 0) offset -= landWidth;
+
+    for (int i = 0; i < numTiles; i++) {
+        Render(offset + i * landWidth, posLand.y);
     }
 }
 
