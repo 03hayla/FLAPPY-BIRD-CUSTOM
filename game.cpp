@@ -369,7 +369,7 @@ void game::lightTheme()
 {
 	LTexture image;
 	image.Load("anh_amthanh/shiba.png", 0.8);
-	image.Render(105, 315);
+	image.Render(325, 315);
 	image.free();
 }
 
@@ -377,17 +377,16 @@ void game::darkTheme()
 {
 	LTexture image;
 	image.Load("anh_amthanh/shiba-dark.png", 0.8);
-	image.Render(105, 315);
+	image.Render(325, 315);
 	image.free();
 }
-
 void game::nextButton()
 {
 	LTexture image;
 	image.Load("anh_amthanh/nextRight.png", 1);
-	image.Render(149, 322);
+	image.Render(370, 322);
 	image.Load("anh_amthanh/nextLeft.png", 1);
-	image.Render(88, 322);
+	image.Render(310, 322);
 	image.free();
 }
 
@@ -395,7 +394,7 @@ bool game::changeTheme()
 {
 	int x, y;
 	SDL_GetMouseState(&x, &y);
-	if (((x > 149 && x < 149+13)  || (x > 88 && x < 88 + 13)) && (y > 322 && y < 322 + 16))
+	if (((x > 370 && x < 370+13)  || (x > 310 && x < 310 + 13)) && (y > 322 && y < 322 + 16))
 	{
 		return true;
 	}

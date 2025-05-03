@@ -42,11 +42,11 @@
 	<cassert>
 	<iostream>
 
-1746207318 source:c:\new project\flappy bird custom\chuong_ngai_vat.cpp
+1746241464 source:c:\new project\flappy bird custom\chuong_ngai_vat.cpp
 	"chuong_ngai_vat.h"
 	"stdio.h"
 
-1746240967 c:\new project\flappy bird custom\chuong_ngai_vat.h
+1746241464 c:\new project\flappy bird custom\chuong_ngai_vat.h
 	"lib.h"
 	<iostream>
 	<vector>
@@ -58,12 +58,12 @@
 	"chuong_ngai_vat.h"
 	<string>
 
-1746207318 source:c:\new project\flappy bird custom\character.cpp
+1746241464 source:c:\new project\flappy bird custom\character.cpp
 	"character.h"
 	<stdio.h>
 	<iostream>
 
-1746207318 source:c:\new project\flappy bird custom\game.cpp
+1746242013 source:c:\new project\flappy bird custom\game.cpp
 	"game.h"
 	"lib.h"
 	<iostream>
@@ -77,7 +77,7 @@
 	<fstream>
 	<sstream>
 
-1746205513 c:\new project\flappy bird custom\music.h
+1746242212 c:\new project\flappy bird custom\music.h
 	<SDL_mixer.h>
 	<string>
 	"lib.h"

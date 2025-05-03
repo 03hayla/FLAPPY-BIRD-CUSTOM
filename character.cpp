@@ -81,7 +81,7 @@ void doge::update(short int pipeWidth, short int pipeHeight)
             time++;
         }
 
-        // Sử dụng pipeInfos thay vì posPipe
+
         if ( (posDoge.x + getWidth() > pipeInfos[ahead].pos.x + 5) && (posDoge.x + 5 < pipeInfos[ahead].pos.x + pipeWidth) &&
              (posDoge.y + 5 < pipeInfos[ahead].pos.y + pipeHeight || posDoge.y  + getHeight() > pipeInfos[ahead].pos.y + pipeHeight + PIPE_SPACE + 5) )
         {
