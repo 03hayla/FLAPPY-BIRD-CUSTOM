@@ -6,7 +6,7 @@
 bool sound::init()
 {
     string breath_path = "anh_amthanh/sfx_breath.wav";
-    string hit_path = "anh_amthanh/game-over-2-sound-effect-230463.wav";
+    string hit_path = "anh_amthanh/duck-sound.wav";
     string sound_path = "anh_amthanh/sound.png";
 
     bool success = true;

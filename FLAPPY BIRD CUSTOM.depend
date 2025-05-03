@@ -53,17 +53,17 @@
 	<ctime>
 	<cstdlib>
 
-1746205513 c:\new project\flappy bird custom\character.h
+1746263547 c:\new project\flappy bird custom\character.h
 	"lib.h"
 	"chuong_ngai_vat.h"
 	<string>
 
-1746241464 source:c:\new project\flappy bird custom\character.cpp
+1746264070 source:c:\new project\flappy bird custom\character.cpp
 	"character.h"
 	<stdio.h>
 	<iostream>
 
-1746242013 source:c:\new project\flappy bird custom\game.cpp
+1746289287 source:c:\new project\flappy bird custom\game.cpp
 	"game.h"
 	"lib.h"
 	<iostream>
@@ -82,7 +82,7 @@
 	<string>
 	"lib.h"
 
-1746205513 source:c:\new project\flappy bird custom\music.cpp
+1746279618 source:c:\new project\flappy bird custom\music.cpp
 	"music.h"
 	<stdio.h>
 	<iostream>

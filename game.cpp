@@ -307,7 +307,7 @@ void game::renderBestScore()
 void game::renderMessage()
 {
 	LTexture image;
-	image.Load("anh_amthanh/message.png", 1);
+	image.Load("anh_amthanh/duck-ready.png", 1);
 	 image.Render((SCREEN_WIDTH - image.getWidth()) / 2, 180);
 	image.free();
 }
@@ -368,15 +368,15 @@ void game::renderPauseTab()
 void game::lightTheme()
 {
 	LTexture image;
-	image.Load("anh_amthanh/shiba.png", 0.8);
-	image.Render(325, 315);
+	image.Load("anh_amthanh/duck-01.png", 0.8);
+	image.Render(330, 310);
 	image.free();
 }
 
 void game::darkTheme()
 {
 	LTexture image;
-	image.Load("anh_amthanh/shiba-dark.png", 0.8);
+	image.Load("anh_amthanh/Duck-02.png", 0.8);
 	image.Render(325, 315);
 	image.free();
 }
@@ -415,17 +415,17 @@ void game::renderMedal()
 
 	if (score > 20 && score <= 50)
 	{
-		image.Load("anh_amthanh/silver.png", scaleNumberS);
+		image.Load("anh_amthanh/silver-medal-demo.png", scaleNumberS);
 	}
 	else if (score > 50)
 	{
-		image.Load("anh_amthanh/gold.png", scaleNumberS);
+		image.Load("anh_amthanh/gold-medal-demo.png", scaleNumberS);
 	}
 	else
 	{
-		image.Load("anh_amthanh/honor.png", scaleNumberS);
+		image.Load("anh_amthanh/bronze-medal-demo.png", scaleNumberS);
 	}
-	image.Render(SCREEN_WIDTH/2 - 100, 275);
+	image.Render((SCREEN_WIDTH/2 - 100)-14, 265);
 
 	image.free();
 }

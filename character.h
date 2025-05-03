@@ -8,6 +8,7 @@
 
 using namespace std;
 
+
 class doge:LTexture
 {
 public:
