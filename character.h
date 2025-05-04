@@ -9,7 +9,7 @@
 using namespace std;
 
 
-class doge:LTexture
+class character:LTexture
 {
 public:
     bool init(bool isDark);
@@ -30,5 +30,5 @@ private:
     short int angle, time, x0;
     short int ahead = 0;
     string saved_path = "";
-    position posDoge;
+    position posChar;
 };

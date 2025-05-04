@@ -29,7 +29,7 @@ int main(int argc, char** argv)
         {
             if (isMenu) {
                 g.sound.playHit();
-                g.shiba.render();
+                g.duck.render();
             }
             g.userInput.Type = game::input::NONE;
             while(g.isDie() && !g.isQuit())
@@ -49,8 +49,8 @@ int main(int argc, char** argv)
                 g.land.render();
                 if (isMenu)
                 {
-                    g.shiba.render();
-                    g.shiba.fall();
+                    g.duck.render();
+                    g.duck.fall();
                     g.renderGameOver();
                     g.renderMedal();
                     g.renderScoreSmall();
@@ -60,8 +60,8 @@ int main(int argc, char** argv)
                 else
                 {
                     g.pipe.init();
-                    g.shiba.init(isDark);
-                    g.shiba.render();
+                    g.duck.init(isDark);
+                    g.duck.render();
                     g.renderMessage();
                     if (g.userInput.Type == game::input::PLAY)
                     {
@@ -88,7 +88,7 @@ int main(int argc, char** argv)
             if (isPause == 0 && g.userInput.Type == game::input::PLAY)
             {
                 if (isSound) g.sound.playBreath();
-                g.shiba.resetTime();
+                g.duck.resetTime();
                 g.userInput.Type = game::input::NONE;
             }
 
@@ -96,12 +96,12 @@ int main(int argc, char** argv)
             else g.renderBackgroundNight();
             g.pipe.render();
             g.land.render();
-            g.shiba.render();
+            g.duck.render();
             g.renderScoreLarge();
 
             if (!isPause)
             {
-                g.shiba.update(g.getPipeWidth(), g.getPipeHeight());
+                g.duck.update(g.getPipeWidth(), g.getPipeHeight());
                 g.pipe.update();
                 g.land.update();
                 g.pause();
@@ -129,7 +129,7 @@ int main(int argc, char** argv)
                     else if (g.changeTheme())
                     {
                         isDark = abs(1 - isDark);
-                        g.shiba.init(isDark);
+                        g.duck.init(isDark);
                     }
                     g.userInput.Type = game::input::NONE;
                 }

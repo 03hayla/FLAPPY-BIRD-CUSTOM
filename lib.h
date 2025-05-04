@@ -52,7 +52,7 @@ public:
     static const short int TOTAL_PIPE = 4;
     static const short int PIPE_DISTANCE = 300;
     static const short int LAND_HEIGHT = 60;
-    static const short int SHIBA_WIDTH = 50;
-    static const short int SHIBA_HEIGHT = 35;
+    static const short int DUCK_WIDTH = 50;
+    static const short int DUCK_HEIGHT = 35;
 };
 

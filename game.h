@@ -19,7 +19,7 @@ public:
         type Type;
     };
     input userInput;
-    doge shiba;
+    character  duck;
     pipe pipe;
     sound sound;
     land land;

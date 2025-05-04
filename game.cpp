@@ -33,7 +33,7 @@ game::game()
 
 game::~game()
 {
-    shiba.Free();
+    duck.Free();
     pipe.Free();
     land.Free();
     sound.Free();
@@ -161,7 +161,7 @@ void game::renderScoreSmall()
 		}
 		else if (number == 6)
 		{
-			image.Load("anh_amthanh/6.png", scaleNumberS);
+			image.Load("anh_amthanh/66.png", scaleNumberS);
 		}
 		else if (number == 7)
 		{
@@ -453,5 +453,5 @@ void game::Restart()
 {
     die = false;
     score = 0;
-    shiba.resetTime();
+    duck.resetTime();
 }

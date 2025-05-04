@@ -2,20 +2,20 @@
 #include <stdio.h>
 #include <iostream>
 
-bool doge::init(bool isDark)
+bool character::init(bool isDark)
 {
-    string shiba_path = "anh_amthanh/duck-01.png";
-    if (isDark) shiba_path = "anh_amthanh/Duck-02.png";
-    if (saved_path == shiba_path)
+    string duck_path = "anh_amthanh/duck-01.png";
+    if (isDark) duck_path = "anh_amthanh/Duck-02.png";
+    if (saved_path == duck_path)
     {
-        posDoge.getPos(150, SCREEN_HEIGHT / 2 - 10);
+        posChar.getPos(150, SCREEN_HEIGHT / 2 - 10);
         ahead = 0;
         angle = 0;
     }
-    if (isNULL() || saved_path != shiba_path)
+    if (isNULL() || saved_path != duck_path)
     {
-        saved_path = shiba_path;
-        if ( Load(shiba_path.c_str() , 1) )
+        saved_path = duck_path;
+        if ( Load(duck_path.c_str() , 1) )
         {
             return true;
         }
@@ -28,23 +28,23 @@ bool doge::init(bool isDark)
     return false;
 }
 
-void doge::Free()
+void character::Free()
 {
     free();
 }
 
-void doge::render()
+void character::render()
 {
-    Render(posDoge.x, posDoge.y, angle);
+    Render(posChar.x, posChar.y, angle);
 }
 
-void doge::fall()
+void character::fall()
 {
-    if (die && posDoge.y < SCREEN_HEIGHT - LAND_HEIGHT - SHIBA_HEIGHT - 5)
+    if (die && posChar.y < SCREEN_HEIGHT - LAND_HEIGHT - DUCK_HEIGHT - 5)
     {
         if (time == 0)
         {
-            x0 = posDoge.y;
+            x0 = posChar.y;
             angle = -25;
         }
         else if (angle < 70 && time > 30)
@@ -54,20 +54,20 @@ void doge::fall()
 
         if (time >= 0)
         {
-            posDoge.y = x0 + time * time * 0.18 - 7.3 * time;
+            posChar.y = x0 + time * time * 0.18 - 7.3 * time;
             time++;
         }
     }
     else return;
 }
 
-void doge::update(short int pipeWidth, short int pipeHeight)
+void   character::update(short int pipeWidth, short int pipeHeight)
 {
     if (!die)
     {
         if (time == 0)
         {
-            x0 = posDoge.y;
+            x0 = posChar.y;
             angle = -25;
         }
         else if (angle < 70 && time > 30)
@@ -77,23 +77,23 @@ void doge::update(short int pipeWidth, short int pipeHeight)
 
         if (time >= 0)
         {
-            posDoge.y = x0 + time * time * 0.18 - 7.3 * time;
+            posChar.y = x0 + time * time * 0.18 - 7.3 * time;
             time++;
         }
 
 
-        if ( (posDoge.x + getWidth() > pipeInfos[ahead].pos.x + 5) && (posDoge.x + 5 < pipeInfos[ahead].pos.x + pipeWidth) &&
-             (posDoge.y + 5 < pipeInfos[ahead].pos.y + pipeHeight || posDoge.y  + getHeight() > pipeInfos[ahead].pos.y + pipeHeight + PIPE_SPACE + 5) )
+        if ( (posChar.x + getWidth() > pipeInfos[ahead].pos.x + 5) && (posChar.x + 5 < pipeInfos[ahead].pos.x + pipeWidth) &&
+             (posChar.y + 5 < pipeInfos[ahead].pos.y + pipeHeight || posChar.y  + getHeight() > pipeInfos[ahead].pos.y + pipeHeight + PIPE_SPACE + 5) )
         {
             die = true;
         }
-        else if (posDoge.x > pipeInfos[ahead].pos.x + pipeWidth )
+        else if (posChar.x > pipeInfos[ahead].pos.x + pipeWidth )
         {
             ahead = ( ahead + 1 ) % TOTAL_PIPE;
             score++;
         }
 
-        if (posDoge.y > SCREEN_HEIGHT - LAND_HEIGHT -  SHIBA_HEIGHT - 5 || posDoge.y < - 10 )
+        if (posChar.y > SCREEN_HEIGHT - LAND_HEIGHT -  DUCK_HEIGHT - 5 || posChar.y < - 10 )
         {
             die = true;
         }

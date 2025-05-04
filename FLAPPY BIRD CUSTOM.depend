@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1746205513 source:c:\new project\flappy bird custom\main.cpp
+1746342969 source:c:\new project\flappy bird custom\main.cpp
 	"game.h"
 	"lib.h"
 	<time.h>
@@ -12,7 +12,7 @@
 	"game.h"
 	<iostream>
 
-1746239254 c:\new project\flappy bird custom\lib.h
+1746342969 c:\new project\flappy bird custom\lib.h
 	<SDL.h>
 	<SDL_image.h>
 	<SDL_ttf.h>
@@ -53,22 +53,22 @@
 	<ctime>
 	<cstdlib>
 
-1746263547 c:\new project\flappy bird custom\character.h
+1746345854 c:\new project\flappy bird custom\character.h
 	"lib.h"
 	"chuong_ngai_vat.h"
 	<string>
 
-1746264070 source:c:\new project\flappy bird custom\character.cpp
+1746345863 source:c:\new project\flappy bird custom\character.cpp
 	"character.h"
 	<stdio.h>
 	<iostream>
 
-1746289984 source:c:\new project\flappy bird custom\game.cpp
+1746346029 source:c:\new project\flappy bird custom\game.cpp
 	"game.h"
 	"lib.h"
 	<iostream>
 
-1746205513 c:\new project\flappy bird custom\game.h
+1746345854 c:\new project\flappy bird custom\game.h
 	"character.h"
 	"chuong_ngai_vat.h"
 	"map.h"
