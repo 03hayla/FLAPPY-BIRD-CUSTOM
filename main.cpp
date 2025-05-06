@@ -137,7 +137,7 @@ int main(int argc, char** argv)
             g.display();
         }
 
-        //Limit FPS
+        
         frameTime = SDL_GetTicks() - frameStart;
         if (frameDelay > frameTime)
         {
