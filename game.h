@@ -4,7 +4,7 @@
 #include "chuong_ngai_vat.h"
 #include "map.h"
 #include "music.h"
-#include "power.h" // Thêm include cho lớp PowerUp
+#include "power.h"
 #include <string>
 #include <fstream>
 #include <sstream>
@@ -25,7 +25,7 @@ public:
     pipe pipe;
     sound sound;
     land land;
-    PowerUp powerUp; // Thêm đối tượng PowerUp
+    PowerUp powerUp;
 
 public:
     game();
@@ -75,10 +75,9 @@ public:
     bool checkReplay();
     void Restart();
 
-    // Thêm hàm để kiểm tra và xử lý va chạm với powerup
+
     void checkPowerUpCollision();
 
-    // Thêm hàm để hiển thị thời gian hiệu ứng còn lại
     void renderEffectTimers();
 
 private:

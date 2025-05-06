@@ -7,30 +7,27 @@ void game::checkPowerUpCollision()
     {
         if (powerUp.checkCollision(duck.getX(), duck.getY(), duck.getWidth(), duck.getHeight()))
         {
-            // Phát âm thanh khi ăn power-up
-            sound.playPowerUp(); // Sử dụng âm thanh hiện có
+
+            sound.playPowerUp();
         }
     }
 }
 
-// Hiển thị thời gian hiệu ứng còn lại
+
 void game::renderEffectTimers()
 {
     if (powerUp.isSpeedUpActive() || powerUp.isGhostActive())
     {
-        // Hiển thị biểu tượng nhỏ cho biết hiệu ứng đang hoạt động
+
         LTexture image;
 
         if (powerUp.isSpeedUpActive())
         {
             image.Load("anh_amthanh/speedrun.png", 0.5);
-            if (image.isNULL()) // Nếu không tìm thấy biểu tượng, sử dụng màu đen
-            {
-                image.Load("anh_amthanh/speedrun.png", 0.3); // Dùng tạm con vịt đen
-            }
+
             image.Render(50, 50);
 
-            // Hiển thị thời gian còn lại
+
             string timeLeft = to_string(powerUp.speedUpEffectTimer / 60 + 1);
             LTexture timeText;
             timeText.Load("anh_amthanh/" + timeLeft + ".png", 0.5);
@@ -41,13 +38,10 @@ void game::renderEffectTimers()
         if (powerUp.isGhostActive())
         {
             image.Load("anh_amthanh/ghostbaby.png", 0.5);
-            if (image.isNULL()) // Nếu không tìm thấy biểu tượng, sử dụng màu đỏ
-            {
-                image.Load("anh_amthanh/duck-01.png", 0.3); // Dùng tạm con vịt
-            }
+
             image.Render(50, 90);
 
-            // Hiển thị thời gian còn lại
+
             string timeLeft = to_string(powerUp.ghostEffectTimer / 60 + 1);
             LTexture timeText;
             timeText.Load("anh_amthanh/" + timeLeft + ".png", 0.5);

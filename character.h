@@ -19,7 +19,7 @@ public:
     void fall();
     void update(short int pileWidth, short int pileHeight, bool ghostActive = false);
 
-    // Thêm các hàm để lấy vị trí và kích thước của nhân vật
+
     short int getX() { return posChar.x; }
     short int getY() { return posChar.y; }
     short int getWidth() { return DUCK_WIDTH; }

@@ -83,7 +83,7 @@ void character::update(short int pipeWidth, short int pipeHeight, bool ghostActi
             time++;
         }
 
-        // Kiểm tra va chạm với cột nếu không trong chế độ ghost
+
         if (!ghostActive &&
             (posChar.x + getWidth() > pipeInfos[ahead].pos.x + 5) &&
             (posChar.x + 5 < pipeInfos[ahead].pos.x + pipeWidth) &&

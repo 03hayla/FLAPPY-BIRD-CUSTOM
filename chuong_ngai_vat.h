@@ -41,7 +41,7 @@ public:
     bool init();
     void Free();
     void render();
-    void update(bool isSpeedUp = false); // Thêm tham số isSpeedUp
+    void update(bool isSpeedUp = false);
     short int width() {return getWidth();}
     short int height() {return getHeight();}
     SDL_Color getRandomColor();

@@ -69,8 +69,8 @@ void pipe::update(bool isSpeedUp)
 {
     if (!die)
     {
-        // Xác định tốc độ di chuyển của cột dựa trên hiệu ứng tăng tốc
-        short int speed = isSpeedUp ? 6 : 3; // Tăng gấp đôi tốc độ khi có hiệu ứng
+
+        short int speed = isSpeedUp ? 6 : 3;
 
         for (signed char i = 0; i < TOTAL_PIPE; i++)
         {

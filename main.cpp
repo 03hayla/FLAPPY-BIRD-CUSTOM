@@ -63,7 +63,7 @@ int main(int argc, char** argv)
                 {
                     g.pipe.init();
                     g.duck.init(isDark);
-                    g.powerUp.init(); // Khởi tạo power-up khi bắt đầu game mới
+                    g.powerUp.init();
                     g.duck.render();
                     g.renderMessage();
                     if (g.userInput.Type == game::input::PLAY)
@@ -77,7 +77,7 @@ int main(int argc, char** argv)
                 g.display();
             }
             g.pipe.init();
-            g.powerUp.reset(); // Khởi tạo lại power-up khi bắt đầu game mới
+            g.powerUp.reset();
         }
         else
         {
@@ -99,24 +99,24 @@ int main(int argc, char** argv)
             if (!isDark) g.renderBackground();
             else g.renderBackgroundNight();
             g.pipe.render();
-            g.powerUp.render(); // Hiển thị power-up
+            g.powerUp.render();
             g.land.render();
             g.duck.render();
             g.renderScoreLarge();
-            g.renderEffectTimers(); // Hiển thị thời gian hiệu ứng còn lại
+            g.renderEffectTimers();
 
             if (!isPause)
             {
-                // Kiểm tra va chạm với power-up
+
                 g.checkPowerUpCollision();
 
-                // Cập nhật vị trí của vịt với các thông số của ống và trạng thái ghost
+
                 g.duck.update(g.getPipeWidth(), g.getPipeHeight(), g.powerUp.isGhostActive());
 
-                // Cập nhật vị trí của ống với trạng thái tăng tốc
+
                 g.pipe.update(g.powerUp.isSpeedUpActive());
 
-                g.powerUp.update(); // Cập nhật power-up
+                g.powerUp.update();
                 g.land.update();
                 g.pause();
             }
