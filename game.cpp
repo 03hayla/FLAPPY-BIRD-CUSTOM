@@ -37,8 +37,8 @@ game::~game()
     pipe.Free();
     land.Free();
     sound.Free();
-    backgroundDayTexture.free();   // Thêm dòng này
-    backgroundNightTexture.free(); // Thêm dòng này
+    backgroundDayTexture.free();   
+    backgroundNightTexture.free(); 
     free();
     releaseGraphic();
 }
@@ -102,18 +102,18 @@ bool game::initGraphic()
 					success = false;
 				}
 				else {
-                     // Load ảnh nền ngày
-                        if( !backgroundDayTexture.Load("anh_amthanh/bg.png", 1) ) // Scale 1 để lấy kích thước gốc
+                     
+                        if( !backgroundDayTexture.Load("anh_amthanh/bg.png", 1) ) 
                         {
                             printf( "Failed to load day background texture!\n" );
-                            success = false; // Đánh dấu thất bại nếu load ảnh lỗi
+                            success = false; 
                         }
 
-                        // Load ảnh nền đêm
-                        if( !backgroundNightTexture.Load("anh_amthanh/background-night.png", 1) ) // Scale 1
+                        
+                        if( !backgroundNightTexture.Load("anh_amthanh/background-night.png", 1) ) 
                         {
                              printf( "Failed to load night background texture!\n" );
-                             success = false; // Đánh dấu thất bại
+                             success = false; 
                         }
 				}
 
@@ -169,7 +169,7 @@ void game::renderScoreSmall()
 		}
 		else if (number == 8)
 		{
-			image.Load("anh_amthanh/8.png", scaleNumberS);
+			image.Load("anh_amthanh/88.png", scaleNumberS);
 		}
 		else if (number == 9)
 		{
@@ -312,24 +312,24 @@ void game::renderMessage()
 	image.free();
 }
 
-// Trong game.cpp
+
 
 void game::renderBackground()
 {
-    // Định nghĩa một hình chữ nhật đích có kích thước bằng màn hình
+    
     SDL_Rect screenRect = { 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT };
-    // Vẽ texture ảnh nền ngày lên toàn bộ hình chữ nhật đích
+    
     // SDL_RenderCopy(renderer, texture, source_rect, dest_rect)
     SDL_RenderCopy(gRenderer, backgroundDayTexture.Texture, NULL, &screenRect);
 }
 
-// Trong game.cpp
+
 
 void game::renderBackgroundNight()
 {
-    // Định nghĩa một hình chữ nhật đích có kích thước bằng màn hình
+    
     SDL_Rect screenRect = { 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT };
-    // Vẽ texture ảnh nền đêm lên toàn bộ hình chữ nhật đích
+    
     SDL_RenderCopy(gRenderer, backgroundNightTexture.Texture, NULL, &screenRect);
 }
 
