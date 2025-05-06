@@ -7,6 +7,7 @@ bool sound::init()
 {
     string breath_path = "anh_amthanh/sfx_breath.wav";
     string hit_path = "anh_amthanh/duck-sound.wav";
+     string powerup_path = "anh_amthanh/sound-effect.wav";
     string sound_path = "anh_amthanh/sound.png";
 
     bool success = true;
@@ -36,6 +37,12 @@ bool sound::init()
         {
             printf( "Failed to load chord! SDL_mixer Error: %s\n", Mix_GetError() );
             success = false;
+        }
+        powerUp = Mix_LoadWAV( powerup_path.c_str() );
+        if (powerUp == NULL)
+        {
+            printf( "Failed to load power-up sound! SDL_mixer Error: %s\n", Mix_GetError() );
+
         }
 
         if (!Load(sound_path))
@@ -77,6 +84,20 @@ void sound::playHit()
         Mix_PlayChannel(-1, hit, 0);
     }
 }
+void sound::playPowerUp()
+{
+    if (isPlay)
+    {
+
+
+
+            Mix_PlayChannel(-1, powerUp, 0);
+
+
+    }
+}
+
+
 
 void sound::renderSound()
 {

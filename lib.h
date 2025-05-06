@@ -54,5 +54,7 @@ public:
     static const short int LAND_HEIGHT = 60;
     static const short int DUCK_WIDTH = 50;
     static const short int DUCK_HEIGHT = 35;
+
+
 };
 

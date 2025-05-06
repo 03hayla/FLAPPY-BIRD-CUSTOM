@@ -1,6 +1,63 @@
 #include "game.h"
 #include "lib.h"
 #include <iostream>
+void game::checkPowerUpCollision()
+{
+    if (!die)
+    {
+        if (powerUp.checkCollision(duck.getX(), duck.getY(), duck.getWidth(), duck.getHeight()))
+        {
+            // Phát âm thanh khi ăn power-up
+            sound.playPowerUp(); // Sử dụng âm thanh hiện có
+        }
+    }
+}
+
+// Hiển thị thời gian hiệu ứng còn lại
+void game::renderEffectTimers()
+{
+    if (powerUp.isSpeedUpActive() || powerUp.isGhostActive())
+    {
+        // Hiển thị biểu tượng nhỏ cho biết hiệu ứng đang hoạt động
+        LTexture image;
+
+        if (powerUp.isSpeedUpActive())
+        {
+            image.Load("anh_amthanh/speedrun.png", 0.5);
+            if (image.isNULL()) // Nếu không tìm thấy biểu tượng, sử dụng màu đen
+            {
+                image.Load("anh_amthanh/speedrun.png", 0.3); // Dùng tạm con vịt đen
+            }
+            image.Render(50, 50);
+
+            // Hiển thị thời gian còn lại
+            string timeLeft = to_string(powerUp.speedUpEffectTimer / 60 + 1);
+            LTexture timeText;
+            timeText.Load("anh_amthanh/" + timeLeft + ".png", 0.5);
+            timeText.Render(80, 50);
+            timeText.free();
+        }
+
+        if (powerUp.isGhostActive())
+        {
+            image.Load("anh_amthanh/ghostbaby.png", 0.5);
+            if (image.isNULL()) // Nếu không tìm thấy biểu tượng, sử dụng màu đỏ
+            {
+                image.Load("anh_amthanh/duck-01.png", 0.3); // Dùng tạm con vịt
+            }
+            image.Render(50, 90);
+
+            // Hiển thị thời gian còn lại
+            string timeLeft = to_string(powerUp.ghostEffectTimer / 60 + 1);
+            LTexture timeText;
+            timeText.Load("anh_amthanh/" + timeLeft + ".png", 0.5);
+            timeText.Render(80, 90);
+            timeText.free();
+        }
+
+        image.free();
+    }
+}
 
 void game::takeInput()
 {
@@ -29,6 +86,7 @@ game::game()
     pipe.init();
     land.init();
     sound.init();
+     powerUp.init();
 }
 
 game::~game()
@@ -37,8 +95,10 @@ game::~game()
     pipe.Free();
     land.Free();
     sound.Free();
-    backgroundDayTexture.free();   // Thêm dòng này
-    backgroundNightTexture.free(); // Thêm dòng này
+     powerUp.Free();
+    backgroundDayTexture.free();
+    backgroundNightTexture.free();
+
     free();
     releaseGraphic();
 }
@@ -102,18 +162,18 @@ bool game::initGraphic()
 					success = false;
 				}
 				else {
-                     // Load ảnh nền ngày
-                        if( !backgroundDayTexture.Load("anh_amthanh/bg.png", 1) ) // Scale 1 để lấy kích thước gốc
+
+                        if( !backgroundDayTexture.Load("anh_amthanh/bg.png", 1) )
                         {
                             printf( "Failed to load day background texture!\n" );
-                            success = false; // Đánh dấu thất bại nếu load ảnh lỗi
+                            success = false;
                         }
 
-                        // Load ảnh nền đêm
-                        if( !backgroundNightTexture.Load("anh_amthanh/background-night.png", 1) ) // Scale 1
+
+                        if( !backgroundNightTexture.Load("anh_amthanh/background-night.png", 1) )
                         {
                              printf( "Failed to load night background texture!\n" );
-                             success = false; // Đánh dấu thất bại
+                             success = false;
                         }
 				}
 
@@ -169,7 +229,7 @@ void game::renderScoreSmall()
 		}
 		else if (number == 8)
 		{
-			image.Load("anh_amthanh/8.png", scaleNumberS);
+			image.Load("anh_amthanh/88.png", scaleNumberS);
 		}
 		else if (number == 9)
 		{
@@ -312,24 +372,23 @@ void game::renderMessage()
 	image.free();
 }
 
-// Trong game.cpp
+
 
 void game::renderBackground()
 {
-    // Định nghĩa một hình chữ nhật đích có kích thước bằng màn hình
+
     SDL_Rect screenRect = { 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT };
-    // Vẽ texture ảnh nền ngày lên toàn bộ hình chữ nhật đích
-    // SDL_RenderCopy(renderer, texture, source_rect, dest_rect)
+
     SDL_RenderCopy(gRenderer, backgroundDayTexture.Texture, NULL, &screenRect);
 }
 
-// Trong game.cpp
+
 
 void game::renderBackgroundNight()
 {
-    // Định nghĩa một hình chữ nhật đích có kích thước bằng màn hình
+
     SDL_Rect screenRect = { 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT };
-    // Vẽ texture ảnh nền đêm lên toàn bộ hình chữ nhật đích
+
     SDL_RenderCopy(gRenderer, backgroundNightTexture.Texture, NULL, &screenRect);
 }
 
@@ -454,4 +513,7 @@ void game::Restart()
     die = false;
     score = 0;
     duck.resetTime();
+     powerUp.reset();
+
+
 }

@@ -65,10 +65,13 @@ void pipe::render()
     }
 }
 
-void pipe::update()
+void pipe::update(bool isSpeedUp)
 {
     if (!die)
     {
+        // Xác định tốc độ di chuyển của cột dựa trên hiệu ứng tăng tốc
+        short int speed = isSpeedUp ? 6 : 3; // Tăng gấp đôi tốc độ khi có hiệu ứng
+
         for (signed char i = 0; i < TOTAL_PIPE; i++)
         {
             if (pipeInfos[i].pos.x < -getWidth())
@@ -79,7 +82,7 @@ void pipe::update()
             }
             else
             {
-                pipeInfos[i].pos.x -= 3;
+                pipeInfos[i].pos.x -= speed;
             }
         }
     }
@@ -87,21 +90,17 @@ void pipe::update()
 
 SDL_Color pipe::getRandomColor()
 {
-
     return availableColors[rand() % 10];
 }
 
 SDL_Texture* pipe::createColoredTexture(SDL_Texture* original, SDL_Color color)
 {
-
     if (color.r == 255 && color.g == 255 && color.b == 255) {
         return original;
     }
 
-
     int width, height;
     SDL_QueryTexture(original, NULL, NULL, &width, &height);
-
 
     SDL_Texture* targetTexture = SDL_CreateTexture(gRenderer, SDL_PIXELFORMAT_RGBA8888,
                                                  SDL_TEXTUREACCESS_TARGET, width, height);
@@ -109,16 +108,9 @@ SDL_Texture* pipe::createColoredTexture(SDL_Texture* original, SDL_Color color)
         return original;
     }
 
-
     SDL_SetRenderTarget(gRenderer, targetTexture);
-
-
     SDL_RenderCopy(gRenderer, original, NULL, NULL);
-
-
     SDL_SetTextureColorMod(targetTexture, color.r, color.g, color.b);
-
-
     SDL_SetRenderTarget(gRenderer, NULL);
 
     return targetTexture;

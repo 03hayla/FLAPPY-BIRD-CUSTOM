@@ -6,12 +6,14 @@ bool character::init(bool isDark)
 {
     string duck_path = "anh_amthanh/duck-01.png";
     if (isDark) duck_path = "anh_amthanh/Duck-02.png";
+
     if (saved_path == duck_path)
     {
         posChar.getPos(150, SCREEN_HEIGHT / 2 - 10);
         ahead = 0;
         angle = 0;
     }
+
     if (isNULL() || saved_path != duck_path)
     {
         saved_path = duck_path;
@@ -23,8 +25,8 @@ bool character::init(bool isDark)
         {
             return false;
         }
-
     }
+
     return false;
 }
 
@@ -61,7 +63,7 @@ void character::fall()
     else return;
 }
 
-void   character::update(short int pipeWidth, short int pipeHeight)
+void character::update(short int pipeWidth, short int pipeHeight, bool ghostActive)
 {
     if (!die)
     {
@@ -81,9 +83,12 @@ void   character::update(short int pipeWidth, short int pipeHeight)
             time++;
         }
 
-
-        if ( (posChar.x + getWidth() > pipeInfos[ahead].pos.x + 5) && (posChar.x + 5 < pipeInfos[ahead].pos.x + pipeWidth) &&
-             (posChar.y + 5 < pipeInfos[ahead].pos.y + pipeHeight || posChar.y  + getHeight() > pipeInfos[ahead].pos.y + pipeHeight + PIPE_SPACE + 5) )
+        // Kiểm tra va chạm với cột nếu không trong chế độ ghost
+        if (!ghostActive &&
+            (posChar.x + getWidth() > pipeInfos[ahead].pos.x + 5) &&
+            (posChar.x + 5 < pipeInfos[ahead].pos.x + pipeWidth) &&
+            (posChar.y + 5 < pipeInfos[ahead].pos.y + pipeHeight ||
+             posChar.y + getHeight() > pipeInfos[ahead].pos.y + pipeHeight + PIPE_SPACE + 5) )
         {
             die = true;
         }
@@ -93,7 +98,7 @@ void   character::update(short int pipeWidth, short int pipeHeight)
             score++;
         }
 
-        if (posChar.y > SCREEN_HEIGHT - LAND_HEIGHT -  DUCK_HEIGHT - 5 || posChar.y < - 10 )
+        if (posChar.y > SCREEN_HEIGHT - LAND_HEIGHT - DUCK_HEIGHT - 5 || posChar.y < - 10 )
         {
             die = true;
         }

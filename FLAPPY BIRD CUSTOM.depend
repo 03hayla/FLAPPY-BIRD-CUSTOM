@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1746342969 source:c:\new project\flappy bird custom\main.cpp
+1746543751 source:c:\new project\flappy bird custom\main.cpp
 	"game.h"
 	"lib.h"
 	<time.h>
@@ -12,7 +12,7 @@
 	"game.h"
 	<iostream>
 
-1746342969 c:\new project\flappy bird custom\lib.h
+1746537640 c:\new project\flappy bird custom\lib.h
 	<SDL.h>
 	<SDL_image.h>
 	<SDL_ttf.h>
@@ -42,47 +42,48 @@
 	<cassert>
 	<iostream>
 
-1746241464 source:c:\new project\flappy bird custom\chuong_ngai_vat.cpp
+1746537640 source:c:\new project\flappy bird custom\chuong_ngai_vat.cpp
 	"chuong_ngai_vat.h"
 	"stdio.h"
 
-1746241464 c:\new project\flappy bird custom\chuong_ngai_vat.h
+1746537640 c:\new project\flappy bird custom\chuong_ngai_vat.h
 	"lib.h"
 	<iostream>
 	<vector>
 	<ctime>
 	<cstdlib>
 
-1746345854 c:\new project\flappy bird custom\character.h
+1746537640 c:\new project\flappy bird custom\character.h
 	"lib.h"
 	"chuong_ngai_vat.h"
 	<string>
 
-1746345863 source:c:\new project\flappy bird custom\character.cpp
+1746537640 source:c:\new project\flappy bird custom\character.cpp
 	"character.h"
 	<stdio.h>
 	<iostream>
 
-1746346029 source:c:\new project\flappy bird custom\game.cpp
+1746544706 source:c:\new project\flappy bird custom\game.cpp
 	"game.h"
 	"lib.h"
 	<iostream>
 
-1746345854 c:\new project\flappy bird custom\game.h
+1746537653 c:\new project\flappy bird custom\game.h
 	"character.h"
 	"chuong_ngai_vat.h"
 	"map.h"
 	"music.h"
+	"power.h"
 	<string>
 	<fstream>
 	<sstream>
 
-1746242212 c:\new project\flappy bird custom\music.h
+1746544706 c:\new project\flappy bird custom\music.h
 	<SDL_mixer.h>
 	<string>
 	"lib.h"
 
-1746279618 source:c:\new project\flappy bird custom\music.cpp
+1746545158 source:c:\new project\flappy bird custom\music.cpp
 	"music.h"
 	<stdio.h>
 	<iostream>
@@ -91,4 +92,14 @@
 1746205513 source:c:\new project\flappy bird custom\winmain.cpp
 	<SDL.h>
 	<windows.h>
+
+1746543751 c:\new project\flappy bird custom\power.h
+	"lib.h"
+	"chuong_ngai_vat.h"
+	<vector>
+	<ctime>
+	<cstdlib>
+
+1746543752 source:c:\new project\flappy bird custom\power.cpp
+	"power.h"
 

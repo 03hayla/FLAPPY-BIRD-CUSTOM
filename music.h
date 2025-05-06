@@ -16,6 +16,7 @@ public:
     void playBreath();
 
     void playHit();
+    void  playPowerUp();
 
     void renderSound();
 
@@ -29,6 +30,7 @@ private:
     Mix_Chunk* breath = NULL;
     Mix_Chunk* hit = NULL;
     Mix_Chunk* drop = NULL;
+    Mix_Chunk* powerUp = NULL;
     SDL_Rect Mute ;
     SDL_Rect Active ;
 };

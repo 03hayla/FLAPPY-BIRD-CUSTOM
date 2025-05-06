@@ -45,6 +45,7 @@
 		<Unit filename="map.h" />
 		<Unit filename="music.cpp" />
 		<Unit filename="music.h" />
+		<Unit filename="winmain.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
